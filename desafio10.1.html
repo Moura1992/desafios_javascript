@@ -1,39 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórmula de baskara</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fórmula de Bhaskara</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+    }
 
-        }
+    .aviso {
+      background-color: #ffeb3b;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 2px solid #ccc;
+    }
 
-        button{
-            height: 5em;
-            width: 10em;
-            border-radius: 10em;
-        }
+    h1 {
+      margin-top: 20px;
+    }
 
+    input {
+      margin: 5px;
+      padding: 10px;
+      width: 60px;
+      font-size: 16px;
+    }
 
+    button {
+      height: 3em;
+      width: 10em;
+      border-radius: 10em;
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-    </style>
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Resolvendo Bhaskara</h1>
-    <button id="btn1">Calcular</button>
-    <p>Considerando uma equação no formato ax<sup>2</sup> + bx +c = 0 ,aperte o botão acima para calcular o valor de &#9650 </p>
-    <section id="resultado"></section>
+  <div class="aviso">
+    Digite os valores de <strong>a</strong>, <strong>b</strong> e <strong>c</strong> para calcular Bhaskara!
+  </div>
 
+  <h1>Resolvendo Bhaskara</h1>
 
-    <script>
-      
+  <label for="a">a:</label>
+  <input type="number" id="a" />
+  <label for="b">b:</label>
+  <input type="number" id="b" />
+  <label for="c">c:</label>
+  <input type="number" id="c" />
 
-    </script>
+  <br>
+  <button id="btn1">Calcular</button>
+
+  <section id="resultado"></section>
+
+  <script>
+    function calcularBhaskara(a, b, c) {
+      const delta = Math.pow(b, 2) - 4 * a * c;
+
+      let resultado = `
+        <p>A equação atual é ${a}x² + ${b}x + ${c} = 0</p>
+        <p>O cálculo realizado será Δ = ${b}² - 4 . ${a} . ${c}</p>
+        <p>O valor calculado foi Δ = ${delta}</p>
+      `;
+
+      if (delta < 0) {
+        resultado += "<p>A equação não possui raízes reais.</p>";
+      } else if (delta === 0) {
+        const x1 = -b / (2 * a);
+        resultado += `<p>A equação possui uma raiz real: x = ${x1.toFixed(2)}</p>`;
+      } else {
+        const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        resultado += `<p>As raízes são x1 = ${x1.toFixed(2)} e x2 = ${x2.toFixed(2)}</p>`;
+      }
+
+      return resultado;
+    }
+
+    document.getElementById("btn1").addEventListener("click", function () {
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      const c = parseFloat(document.getElementById("c").value);
+
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById("resultado").innerHTML = "<p>Por favor, insira todos os valores corretamente.</p>";
+        return;
+      }
+
+      const resultadoHTML = calcularBhaskara(a, b, c);
+      document.getElementById("resultado").innerHTML = resultadoHTML;
+    });
+
     
+  </script>
+
 </body>
 </html>
