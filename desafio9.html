@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Bebas+Neue&family=League+Gothic&family=Poppins:wght@100;300;400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Tenor Sans", sans-serif;
+            color: white;
+            background: linear-gradient(to right, #152d15, #2d4820, #516b34);
+            text-align: center;
+            
+            
+        }
+
+        button{
+            height: 5em;
+            width: 15em;
+            align-items: center;
+            border-radius: 7px;
+            
+        }
+
+        p{
+            margin: 0.1em;
+        }
+
+      
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <h1>Calculadora de reajuste salarial</h1>
+    <button id="btn1">Reajustar salário</button>
+    <p>Clique no botão acima para iniciar.</p>
+
+    <section id="resultado"></section>
+
+    <script>
+       document.getElementById("btn1").addEventListener("click",function(){
+       let funcionario = prompt("Qual o nome do funcionário?")
+       let salario = parseFloat (prompt('Qual é o salario de ' + funcionario + " ?"))   
+       let reajuste = parseFloat(prompt("O salário de " + funcionario + " vai ser reajustado em qual porcentagem ?")) 
+
+        if (!funcionario || isNaN(salario) || isNaN(reajuste)) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+        }
+
+       let aumento = salario * (reajuste / 100)
+       let valor_reajustado = (salario + aumento)
+
+       
+
+       resultado.innerHTML =
+       `<h1>${funcionario} recebeu um aumento salarial!</h1>
+       <p>O salário atual era R$ ${salario.toFixed(2)}.</p>
+       <p>Com o aumento de ${reajuste}%,o salário vai aumentar R$ ${aumento.toFixed(2)} no proximo mês.</p>
+       <p>E a partir daí, ${funcionario} vai passar a ganhar R$ ${valor_reajustado.toFixed(2)}</p>`
+
+       
+       
+       })
+
+       
+
+
+
+    </script>
+    
+</body>
+
+
+
+
+</html>

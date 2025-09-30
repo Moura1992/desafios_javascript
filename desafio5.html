@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Moedas</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      button {
+        width: 20vh;
+        height: 7vh;
+      }
+
+      p {
+        font-size: small;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Conversor de Medidas</h1>
+    <button id="btn1">Converter</button>
+    <p>Clique no botão acima para iniciar</p>
+
+    <section id="resultado"></section>
+
+    <script>
+
+
+      document.getElementById("btn1").addEventListener("click", function () {
+        var m = parseFloat(prompt("Digite uma distância em metros (m) :"));
+
+        var convertido = {
+            km : (m / 1000),
+            dam :(m / 10),
+            cm : (m * 100),
+            mm : (m * 1000),
+        };
+
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = 
+        "<h2> A distancia de " + m + " metros, corresponde a ...</h2>" +
+        "<p>"+ convertido.km + " km</p>"+
+        "<p>"+ convertido.dam + " dam</p>"+
+        "<p>"+ convertido.cm + " cm</p>"+
+        "<p>"+ convertido.mm + " mm</p>";
+
+
+    
+
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor -> US$</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <h1 id="titulo"></h1>
+    <button id="converter"></button>
+    <p id="paragrafo1"></p>
+
+    <section id="resultado"></section>
+
+</body>
+
+
+    <script>
+        
+      let cotaçao = parseFloat(prompt('Antes de mais nada...Quanto está a cotação do dolár agora?'))
+      document.getElementById("titulo").innerHTML = `Conversor R$ → US$`
+      document.getElementById("converter").innerHTML = `Converter`
+      document.getElementById("paragrafo1").innerHTML = `Clique no botão acima para iniciar.`
+
+      document.getElementById("converter").addEventListener("click",function(){
+            let reais = parseFloat(prompt("Quantos R$ voçê tem na carteira ?"))
+            let conversao = (reais / cotaçao)
+
+            resultado.innerHTML = 
+            "<p> O valor de " + reais + " reais que voçê tem em carteira será convertido em " + conversao.toFixed(2) + " dolares</p>"
+
+      })
+
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcula troco</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      button {
+        background-color: #d7d7d7;
+        border-color: #746e6e;
+        height: 4em;
+        width: 15em;
+      }
+    </style>
+
+    
+  </head>
+
+  <body>
+    <h1>Calculando o Troco</h1>
+
+    <button id="botao" >Compra produto</button>
+  </body>
+
+
+
+  <script>
+
+        document.getElementById('botao').addEventListener('click',function(){
+            let produto = prompt('Que produto voçê esta comprando?')
+            let preço = Number(prompt('Quanto custa o '  + produto +  ' que você esta comprando?'))
+            let pago  = Number(prompt('Qual o valor que voçê deu para pagar o '+ produto ))
+            let troco = (pago - preço)
+            alert('Voçê comprou ' + produto + ' que custou R$ ' + preço + '\n Deu R$ ' + pago + ' em dinheiro e vai receber ' + troco + '\n Volte Sempre!' )
+
+        })
+
+        
+        /* o comando \n fornece uma quebra de linha   */
+
+
+  </script>
+
+
+</html>

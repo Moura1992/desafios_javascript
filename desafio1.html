@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensagens</title>
+    <style>
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .botao {
+        background-color: rgba(198, 177, 177, 0.582);
+        width: 104px;
+        height: 64px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Desafio das Mensagens</h1>
+    <button class="botao" id="btn1">Botão 1</button>
+    <button class="botao" id="btn2">Botão 2</button>
+    <button class="botao" id="btn3">Botão 3</button>
+  </body>
+
+
+
+  <script>
+    document.getElementById("btn1").addEventListener("click", function () {
+      alert("Voçê clicou no botão 1!");
+    });
+
+    document.getElementById("btn2").addEventListener("click", function () {
+      alert("Voçê clicou no botão 2!");
+    });
+
+    document.getElementById("btn3").addEventListener("click", function () {
+      alert("Voçê clicou no botão 3!");
+    });
+
+    
+
+    //document = Isso representa toda a página web...esta buscando o html da pagina
+
+    //.getElementById("btn1") = Aqui o JavaScript está procurando um elemento que tem o ID "btn1".Ou seja, ele está dizendo:
+    //"Página, me mostra o botão que tem o nome "btn1"!
+
+    //.addEventListener("click", ...) "Quando alguém clicar nesse botão, faça alguma coisa."..ele esta adicionando um evento
+    //O "click" é o tipo de ação que estamos esperando — nesse caso, um clique.
+
+    //function() { alert(...) }Aqui está o que vai acontecer quando o botão for clicado.
+    //A função diz:
+    //"Quando clicar, mostre uma caixinha de alerta com a mensagem 'Você clicou no botão 1'."
+
+  </script>
+</html>
