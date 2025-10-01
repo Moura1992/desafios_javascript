@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ano bissexto</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      button {
+        height: 5em;
+        width: 10em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ano Bissexto</h1>
+    <button id="btn1">Verificar</button>
+    <p>Informe um ano para saber se ele é bissexto</p>
+    <section id="resultado"></section>
+
+    <script>
+                  document.getElementById("btn1").addEventListener("click",function(){
+                  const ano = (prompt("Qual ano vc quer verificar ?"))
+
+                  function verificarAnoBissexto(ano) {
+                    if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+                    return `${ano} é um ano bissexto.`;
+                    } else {
+                    return `${ano} não é um ano bissexto.`;
+                    }
+                }
+
+                const resultado = verificarAnoBissexto(ano)
+                document.getElementById("resultado").innerHTML = 
+                `<h1>Analisando ${ano} ...</h1>
+                <p>${resultado}</p>`
+
+              })
+    </script>
+  </body>
+</html>

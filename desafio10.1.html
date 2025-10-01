@@ -48,6 +48,9 @@
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
+
+
+    
   </style>
 </head>
 <body>
@@ -71,7 +74,7 @@
   <section id="resultado"></section>
 
   <script>
-    function calcularBhaskara(a, b, c) {
+      function calcularBhaskara(a, b, c) {
       const delta = Math.pow(b, 2) - 4 * a * c;
 
       let resultado = `
@@ -94,7 +97,7 @@
       return resultado;
     }
 
-    document.getElementById("btn1").addEventListener("click", function () {
+      document.getElementById("btn1").addEventListener("click", function () {
       const a = parseFloat(document.getElementById("a").value);
       const b = parseFloat(document.getElementById("b").value);
       const c = parseFloat(document.getElementById("c").value);
@@ -108,7 +111,7 @@
       document.getElementById("resultado").innerHTML = resultadoHTML;
     });
 
-    
+
   </script>
 
 </body>
