@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        button{
+            width: 15em;
+            height: 5em;
+
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <h1>Situação do aluno</h1>
+    <button id="btn1">Entrar com as notas</button>
+    <p>Clique no botão acima para informar as notas do aluno</p>
+    <section id="visual"></section>
+
+
+    <script>
+        document.getElementById("btn1").addEventListener("click",function(){
+            let nome_aluno = prompt("Qual o nome do aluno?");
+            let nota1 = parseFloat (prompt("Primeira nota de " + nome_aluno + ":"));
+            let nota2 = parseFloat (prompt("Segunda nota de "+ nome_aluno + ":"));
+            let resultado = (nota1 + nota2) / 2 
+
+            let status
+
+            if(resultado >= 6){
+                status = "Com a média acima de 6 o a aluno está em <span style='background-color:green'><strong>APROVADO</strong></span>"
+            }else if(resultado >= 3 && resultado < 6){
+                status = "Com a média entre 3 de 6 o a aluno está em <span style='background-color:yellow'><strong>RECUPERAÇÃO</strong></span>"
+            }else{
+                status = "Com a média abaixo de 3 o a aluno está em <span style='background-color:red'><strong>REPROVADO</strong></span>"
+            }
+
+            document.getElementById("visual").innerHTML = 
+            `<h1>Analizando a situação de ${nome_aluno}</h1>
+             <p>Com as notas ${nota1} e ${nota2}, a <strong>média é ${resultado.toFixed(2)}</strong></p>
+             <p> ${status}</p>`
+
+            
+
+
+        })
+
+            
+
+
+
+    </script>
+</body>
+</html>
